@@ -42,6 +42,7 @@
       true,
       "always"
     ],
+    "no-bitwise": false,
     "no-console": false,
     "curly": true,
     "brace-style": [
