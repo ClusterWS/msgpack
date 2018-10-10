@@ -1,0 +1,35 @@
+{
+  "src": "./src/",
+  "main": "index.ts",
+  "tslint": "./tslint.json",
+  "distFolder": "./dist/",
+  "output": {
+    "format": "cjs",
+    "file": "index.js",
+    "name": "msgpack"
+  },
+  "uglify": {
+    "mangle": true,
+    "output": {
+      "beautify": true
+    }
+  },
+  "tsConfigs": {
+    "compilerOptions": {
+      "target": "es6",
+      "module": "ES2015",
+      "removeComments": true,
+      "moduleResolution": "node",
+      "declaration": true
+    },
+    "files": [
+      "./node_modules/@types/node/index.d.ts"
+    ],
+    "exclude": [
+      "./src/**/*.test.ts"
+    ],
+    "include": [
+      "./src/**/*"
+    ]
+  }
+}

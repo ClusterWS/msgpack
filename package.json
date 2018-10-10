@@ -1,0 +1,19 @@
+{
+  "name": "msgpack",
+  "version": "0.0.1",
+  "description": "Light implementation of msgpack for ClusterWS",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "Dmitrii Goriunov",
+  "scripts": {
+    "build": "ts-builder -c ./tsbuild.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClusterWS/msgpack.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ts-builder": "^0.8.0"
+  }
+}
