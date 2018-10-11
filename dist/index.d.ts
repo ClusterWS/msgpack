@@ -24,12 +24,12 @@ export function subarray(buffer: Uint8Array, start: number, end: number): Uint8A
 export function toString(buffer: Uint8Array, start: number, end: number): string;
 export function fromString(str: string): Uint8Array;
 
-export function decode(decoder: BufferHolder): any;
+export function decodeFn(decoder: BufferHolder): any;
 
 export function encodeFn(encoder: BufferHolder, value: any): void;
 
 export function encode(input: any): Uint8Array | null;
-export function decode(): any;
+export function decode(input: Buffer | Uint8Array): any;
 
 export class Paper {
     buffers: Uint8Array[];

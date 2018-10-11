@@ -1,12 +1,12 @@
-import { decode } from './decode';
+import { decodeFn } from './decode';
 import { BufferHolder } from './buffer.holder';
 import { toString, subarray } from './buffer.util';
 
 export function map(decoder: BufferHolder, len: number): any {
   const value: any = {};
   for (let i: number = 0; i < len; ++i) {
-    const valueKey: any = decode(decoder);
-    value[valueKey] = valueKey;
+    // this decodeFn should be called twice !!! to parse stuff properly
+    value[decodeFn(decoder)] = decodeFn(decoder);
   }
   return value;
 }
@@ -14,7 +14,7 @@ export function map(decoder: BufferHolder, len: number): any {
 export function array(decoder: BufferHolder, len: number): any {
   const value: any[] = new Array(len);
   for (let i: number = 0; i < len; ++i) {
-    value[i] = decode(decoder);
+    value[i] = decodeFn(decoder);
   }
   return value;
 }
