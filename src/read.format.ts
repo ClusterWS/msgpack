@@ -1,12 +1,22 @@
+import { decode } from './decode';
 import { BufferHolder } from './buffer.holder';
 import { toString, subarray } from './buffer.util';
 
 export function map(decoder: BufferHolder, len: number): any {
-  // need to implement
+  const value: any = {};
+  for (let i: number = 0; i < len; ++i) {
+    const valueKey: any = decode(decoder);
+    value[valueKey] = valueKey;
+  }
+  return value;
 }
 
 export function array(decoder: BufferHolder, len: number): any {
-  // need to implement
+  const value: any[] = new Array(len);
+  for (let i: number = 0; i < len; ++i) {
+    value[i] = decode(decoder);
+  }
+  return value;
 }
 
 export function str(decoder: BufferHolder, len: number): string {

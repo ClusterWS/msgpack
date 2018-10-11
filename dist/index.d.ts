@@ -5,12 +5,31 @@ export function subarray(buffer: Uint8Array, start: number, end: number): Uint8A
 export function toString(buffer: Uint8Array, start: number, end: number): string;
 export function fromString(str: string): Uint8Array;
 
-export function decode(decoder: any): any;
+export class BufferHolder {
+    start: number;
+    offset: number;
+    buffer: Uint8Array;
+    buffers: Uint8Array[];
+    setBuffer(buffer: Uint8Array): void;
+    alloc(length: number): void;
+    push(buffer: Uint8Array): void;
+    reserve(length: number): void;
+    read(): Uint8Array | null;
+    flush(): void;
+    send(buffer: Uint8Array): void;
+}
 
-export function encode(encoder: Paper, value: any): void;
+export function concat(buffers: Uint8Array[]): Uint8Array;
+export function subarray(buffer: Uint8Array, start: number, end: number): Uint8Array;
+export function toString(buffer: Uint8Array, start: number, end: number): string;
+export function fromString(str: string): Uint8Array;
 
-export function encode(input: any): void;
-export function decode(input: any): void;
+export function decode(decoder: BufferHolder): any;
+
+export function encodeFn(encoder: BufferHolder, value: any): void;
+
+export function encode(input: any): Uint8Array | null;
+export function decode(): any;
 
 export class Paper {
     buffers: Uint8Array[];
@@ -40,10 +59,30 @@ export function int32(decoder: any): any;
 export function float32(decoder: any): any;
 export function float64(decoder: any): any;
 
+export function map(decoder: BufferHolder, len: number): any;
+export function array(decoder: BufferHolder, len: number): any;
+export function str(decoder: BufferHolder, len: number): string;
+export function bin(decoder: BufferHolder, len: number): Uint8Array;
+export function uint8(decoder: BufferHolder): number;
+export function uint16(decoder: BufferHolder): number;
+export function uint32(decoder: BufferHolder): number;
+export function int8(decoder: BufferHolder): number;
+export function int16(decoder: BufferHolder): number;
+export function int32(decoder: BufferHolder): number;
+export function float32(decoder: BufferHolder): number;
+export function float64(decoder: BufferHolder): number;
+
 export function type(encoder: Paper, valueType: any): void;
 export function int8(encoder: Paper, valueType: any, value: any): void;
 export function int16(encoder: Paper, valueType: any, value: any): void;
 export function int32(encoder: Paper, valueType: any, value: any): void;
 export function float32(encoder: Paper, value: any): void;
 export function float64(encoder: Paper, value: any): void;
+
+export function type(encoder: BufferHolder, valueType: any): void;
+export function int8(encoder: BufferHolder, valueType: any, value: any): void;
+export function int16(encoder: BufferHolder, valueType: any, value: any): void;
+export function int32(encoder: BufferHolder, valueType: any, value: any): void;
+export function float32(encoder: BufferHolder, value: any): void;
+export function float64(encoder: BufferHolder, value: any): void;
 

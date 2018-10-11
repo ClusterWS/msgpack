@@ -26,7 +26,7 @@ export function subarray(buffer: Uint8Array, start: number, end: number): Uint8A
   );
 }
 
-// need to add browser system
+// need to add browser support system
 export function toString(buffer: Uint8Array, start: number, end: number): string {
   return Buffer.from(buffer.buffer, buffer.byteOffset, buffer.byteLength)
     .toString('utf8', start, end);
