@@ -267,14 +267,14 @@ class Paper {
     }
 }
 
+const encoder = new Paper(), decoder = new Paper();
+
 function encode$1(e) {
-    const t = new Paper();
-    return encode(t, e), t.read();
+    return encode(encoder, e), encoder.read();
 }
 
 function decode$1(e) {
-    const t = new Paper();
-    return t.setBuffer(e), decode(t);
+    return decoder.setBuffer(e), decode(decoder);
 }
 
 exports.encode = encode$1, exports.decode = decode$1;

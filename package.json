@@ -14,9 +14,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "ts-builder": "^0.8.0"
-  },
-  "dependencies": {
-    "msgpack-lite": "^0.1.26"
+    "ts-builder": "^0.8.0",
+    "msgpack-lite": "^0.1.26",
+    "tiny-msgpack": "^1.0.2"
   }
 }
