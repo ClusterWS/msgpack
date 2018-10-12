@@ -61,13 +61,6 @@ readToken[0xc4] = flex(read.uint8, read.bin);
 readToken[0xc5] = flex(read.uint16, read.bin);
 readToken[0xc6] = flex(read.uint32, read.bin);
 
-// ext 8 -- 0xc7
-// ext 16 -- 0xc8
-// ext 32 -- 0xc9
-// readToken[0xc7] = flex(read.uint8, read.ext);
-// readToken[0xc8] = flex(read.uint16, read.ext);
-// readToken[0xc9] = flex(read.uint32, read.ext);
-
 // float 32 -- 0xca
 // float 64 -- 0xcb
 readToken[0xca] = read.float32;
@@ -90,17 +83,6 @@ readToken[0xd0] = read.int8;
 readToken[0xd1] = read.int16;
 readToken[0xd2] = read.int32;
 readToken[0xd3] = null;
-
-// fixext 1 -- 0xd4
-// fixext 2 -- 0xd5
-// fixext 4 -- 0xd6
-// fixext 8 -- 0xd7
-// fixext 16 -- 0xd8
-// readToken[0xd4] = fix(1, read.ext);
-// readToken[0xd5] = fix(2, read.ext);
-// readToken[0xd6] = fix(4, read.ext);
-// readToken[0xd7] = fix(8, read.ext);
-// readToken[0xd8] = fix(16, read.ext);
 
 // str 8 -- 0xd9
 // str 16 -- 0xda
